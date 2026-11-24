@@ -30,7 +30,7 @@ def main():
         if key_lst[pg.K_DOWN]:  # 下矢印キーが押されたら
             dy = +1
         if key_lst[pg.K_LEFT]:  # 左矢印キーが押されたら
-            dx = -1           
+            dx = -2          
         if key_lst[pg.K_RIGHT]:  # 右矢印キーが押されたら
             dx = +1
         
