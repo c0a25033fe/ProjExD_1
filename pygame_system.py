@@ -5,6 +5,13 @@ import pygame as pg
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
+import os
+import sys
+import pygame as pg
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+
 def main():
     pg.display.set_caption("はばたけ！こうかとん")
     screen = pg.display.set_mode((800, 600))
@@ -17,15 +24,17 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        screen.blit(bg_img, [0, 0])
-        screen.blit(kk_img, [300, 200])  
+        screen.blit(bg_img, [0, 0])  # 練習2
+        x = tmr  # 練習5：背景画像移動用の変数
+        screen.blit(bg_img, [-x, 0])  # 練習2
+        screen.blit(kk_img, [300, 200])  # 練習4：こうかとんSurfaceの描画
         pg.display.update()
         tmr += 1        
         clock.tick(10)
+        clock.tick(200)  # 練習6：FPSの変更
 
 
 if __name__ == "__main__":
     pg.init()
     main()
     pg.quit()
-    sys.exit()
